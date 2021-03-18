@@ -1,0 +1,30 @@
+tbody {
+    font-family: Arial, Verdana, sans-serif;
+    color: black;
+}
+
+thead{
+    font-size: 18px;
+}
+th{
+    color: white;
+    background-color: red;
+   border-collapse: collapse;
+
+}
+caption{
+    font-size: 20px;
+    border: 1px outset black;
+}
+table{
+    border-color: black;
+    border-style: outset;
+    border-width: 1px;
+}
+title{
+    font-size: 80px;
+}
+
+table, td, th {
+    border: 1px outset black;
+}

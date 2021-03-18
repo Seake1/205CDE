@@ -1,0 +1,24 @@
+img {
+    border-style: outset;
+    border-color: #2B81AF;
+}
+
+
+
+div {
+border-style: outset;
+    border-color: black;
+    border-width: 1px;
+    position: center;
+    text-align: center;
+}
+
+div.blue{
+background-color: lightblue;
+}
+div.yellow{
+    background-color: lightyellow;
+}
+div.red{
+    background-color: lightcoral;
+}

@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, Verdana, sans-serif;
+    border-style: dot-dash;
+    background-color: #0D3349;
+}
+
+h1, h2 {
+    color: blue;
+    font-weight: bold;
+border-style: dashed;
+
+}
+h1 {
+    font-size: 3.0em;
+    border-style: dotted;
+    background-color: #2B81AF;
+}
+
+ul, ol {
+    font-size: 0.9em;
+    border-style: dotted;
+    color: darkgrey;
+}
+
+h3{
+    font-size: 9.8em;
+}
+p::first-letter {
+    font-size:8em;
+}
+
+p::first-line {
+    font-weight: bold;
+}
