@@ -1,0 +1,16 @@
+input[type="text"] {
+    color: grey;
+}
+
+input[type="submit"] {
+    font-weight: bold;
+}
+
+div {
+    margin: 1em;
+    width: 300px;
+}
+
+input {
+    text-align: center;
+}

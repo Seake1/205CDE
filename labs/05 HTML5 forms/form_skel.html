@@ -1,63 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-	<!--
-	This page demonstrates a form.
-	-->
-	<head>
-		<meta charset="utf-8"/>
-		<title>Demonstrating HTML forms</title>
-	</head>
-	
-	<body>
-		<h1>Turnitin</h1>
-		<form  lang="fi" action="">
-			<div>
-				Name: <input type="text" name="studentname"/>
-			</div>
-			<div>
-				Student id: <input type="text" name="id"  />
-			</div>
-			<div>
-				Email:
-				<!--
-				Make an input named "email"
-				-->
-			</div>
-			<div>
-				Assignment:
-				<!--
-				Make an input named "assignment"
-				-->
-				
-			</div>
+<html lang="fi">
+<!--
+This page demonstrates a form.
+-->
+<head>
+	<link href="form.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8"/>
+	<title>Demonstrating HTML forms</title>
+</head>
 
-			<div>
-				Code:
-				<!--
-				Make an input named "code" which is a text area to put student's code into.
-				-->
-				
-			</div>
-			<div>
-				Cheat:
-			<!--
-				Make an input named "cheat" which is a check box the student must check.
-			-->
-			</div>
-			<div>
-				Pay:
-			<!--
-				Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
-			-->
-			</div>
-			<div>
-				Score:
-			<!--
-				Make an input named "score" which is a list of choices for the score 
-			-->
-			</div>
-			<input type="submit" />
-		</form>
-		<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>
-	</body>
+<body>
+<h1>Turnitin</h1>
+<form  lang="fi" action="">
+	<div>
+		Name: <input name="studentname" placeholder="Matti Meikäläinen" type="text"/>
+	</div>
+	<div>
+		Student id: <input name="id" pattern="\d{7}\" placeholder="1902002" type="text"/>
+	</div>
+	<div>
+		Email:
+		<!--
+        Make an input named "email"
+        -->
+		<input name="email" pattern="([0-9A-Y])\@\([0-9A-Y])" placeholder="matti.meikalainen@matti.com"
+			   type="text"/>
+	</div>
+	<div>
+		Assignment:
+		<!--
+        Make an input named "assignment"
+        -->
+		<input name="assignment" type="text"/>
+	</div>
+
+	<div>
+		Code:
+		<!--
+        Make an input named "code" which is a text area to put student's code into.
+        -->
+		<input name="code" type="text"/>
+	</div>
+	<div>
+		Cheat:
+		<!--
+            Make an input named "cheat" which is a check box the student must check.
+        -->
+		<input name="cheat" type="checkbox"/>
+	</div>
+	<div>
+		Pay:
+		<!--
+            Make an input named "payment" which is a radio box with possible values of visa, paypal, mastercard
+        -->
+		<input id="paypal" type="radio"/>
+		<label for="paypal">Paypal</label>
+		<input id="master" type="radio"/>
+		<label for="master">Mastercard</label>
+		<input id="visa" type="radio"/>
+		<label for="visa">Visa</label>
+	</div>
+	<div>
+		Score:
+		<!--
+            Make an input named "score" which is a list of choices for the score
+        -->
+		<input id="score" list="score" pattern=""/>
+	</div>
+	<input type="submit" />
+</form>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">Validate</a>
+</body>
 </html>
+
