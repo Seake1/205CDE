@@ -2,7 +2,31 @@
 // This script manages a to-do list.
 
 // Need a global variable:
-var tasks = []; 
+var tasks = [];
+
+function removeDuplicates() {
+    'use strict';
+    var addedTaskListElement = document.querySelector("ol");
+    console.log(addedTaskListElement);
+
+    addedTaskListElement.innerHTML = "";
+
+    var removedDuplicates = remove_duplicates(tasks);
+    console.log(removedDuplicates);
+
+    var i;
+    for (i = 0; i < removedDuplicates.length; i++) {
+        var emptyLi = document.createElement("li");
+        var emptyTextNode = document.createTextNode(removedDuplicates[i]);
+        emptyLi.appendChild(emptyTextNode);
+        addedTaskListElement.appendChild(emptyLi);
+    }
+}
+function remove_duplicates(arr) {
+    let unique_array = Array.from(new Set(arr));
+    return unique_array;
+}
+
 
 // Function called when the form is submitted.
 // Function adds a task to the global array.
