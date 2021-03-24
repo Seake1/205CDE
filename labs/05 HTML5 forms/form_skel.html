@@ -16,14 +16,14 @@ This page demonstrates a form.
 		Name: <input name="studentname" placeholder="Matti Meikäläinen" type="text"/>
 	</div>
 	<div>
-		Student id: <input name="id" pattern="\d{7}\" placeholder="1902002" type="text"/>
+		Student id: <input name="id" pattern="\d{7}\" placeholder="12345678" type="text"/>
 	</div>
 	<div>
 		Email:
 		<!--
         Make an input named "email"
         -->
-		<input name="email" pattern="([0-9A-Y])\@\([0-9A-Y])" placeholder="matti.meikalainen@matti.com"
+		<input name="email" pattern="([0-9A-Y])\@\([0-9A-Y])" placeholder="matti.meikalainen@gmail.com"
 			   type="text"/>
 	</div>
 	<div>
@@ -66,7 +66,7 @@ This page demonstrates a form.
 		<!--
             Make an input named "score" which is a list of choices for the score
         -->
-		<input id="score" list="score" pattern=""/>
+		<input id="score" list="score" pattern="\d[0-99]"/>
 	</div>
 	<input type="submit" />
 </form>
