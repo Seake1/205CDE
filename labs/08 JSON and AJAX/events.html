@@ -28,10 +28,25 @@ function handleClick(e) {
 	}
 	alert("You clicked on " + target.id);
 }
-
   </script>
 </head>
 <body>
 <span id="clickme">Click me!</span>
+
+<h1 id="demo">Mouse over me</h1>
+
+<script>
+  document.getElementById("demo").onmouseover = function() {mouseOver()};
+  document.getElementById("demo").onmouseout = function() {mouseOut()};
+
+  function mouseOver() {
+    document.getElementById("demo").style.color = "green";
+  }
+
+  function mouseOut() {
+    document.getElementById("demo").style.color = "black";
+  }
+</script>
+
 </body>
 </html>

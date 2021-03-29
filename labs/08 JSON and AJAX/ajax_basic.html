@@ -10,14 +10,26 @@
     Make a request
   </span>
 
+  <span id="ajaxButton1" style="cursor: pointer; text-decoration: underline">
+    <h1>Button</h1>
+      <div id="dynamicCheck">
+   <input type="button" value="text input Element" onclick="createNewElement();"/>
+</div>
+
+<div id="newElementId"></div>
+
+  </span>
+
 
   <script type="text/javascript">
   (function() {
     var httpRequest;
-    var testUrl = 'data/story.json';
+    var testUrl = "newElementId";
+    document.getElementsByName("ajaxButton1").onclick = function() { makeRequest(testUrl);
+    };
     // Use Github Gist when no web server is available
-    // var testUrl = 'https://gist.githubusercontent.com/c0lin/571d38b984d41b44aacf/raw/story.json';
-    document.getElementById("ajaxButton").onclick = function() { makeRequest(testUrl); };
+     //var testUrl = 'https://gist.githubusercontent.com/c0lin/571d38b984d41b44aacf/raw/story.json';
+    //document.getElementById("ajaxButton").onclick = function() { makeRequest(testUrl); };
 
     function makeRequest(url) {
       if (window.XMLHttpRequest) { // Mozilla, Safari, ...
@@ -35,7 +47,7 @@
       }
 
       if (!httpRequest) {
-        alert('Giving up :( Cannot create an XMLHTTP instance');
+        alert('Site is DOWN');
         return false;
       }
 
@@ -59,7 +71,17 @@
       }
     }
   })();
+
+  function createNewElement() {
+
+      var txtNewInputBox = document.createElement('div');
+
+      txtNewInputBox.innerHTML = "<input type='text' id='newInputBox'>";
+
+      document.getElementById("newElementId").appendChild(txtNewInputBox);
+  }
   </script>
+
 
 </body>
 </html>

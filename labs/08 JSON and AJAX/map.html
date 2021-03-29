@@ -11,13 +11,15 @@
 		var mydiv = document.getElementById("mydiv");
 		mydiv.onclick = addtext;
 	}
-	
+
+
 	function showCoords(eventObj) {
 		var coords = document.getElementById("coords");
 		var x = eventObj.clientX;
 		var y = eventObj.clientY;
 		coords.innerHTML = "Map coordinates: " + x + ", " + y;
 	}
+
 
 	function addtext(){
 		if (document.createTextNode){
