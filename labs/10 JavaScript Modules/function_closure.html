@@ -1,52 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Click me!</title>
-<style> 
-	body, button { margin: 10px; } 
-	div { padding: 10px; }
-</style>
-<script>
+	<meta charset="utf-8">
+	<title>Click me!</title>
+	<style>
+		body, button {  margin: 30px;  }
+		div { padding: 30px;  }
+	</style>
+	<script>
+		window.onload = function () {
+			let speed = 0;
+			function update () {
+				document.getElementById('playback-speed').innerText = `Current speed: ${speed}`
+			}
 
-/*
-//
-// The version without the closure...
-//
-var count = 0;
-window.onload = function() {
-	var button = document.getElementById("clickme");
-	button.onclick = handleClick;
-};
 
-function handleClick() {
-	var message = "You clicked me ";
-	var div = document.getElementById("message");
-	count++;
-	div.innerHTML = message + count + " times!";
-}
-*/
+			function plus () {
+				speed++;
+				update()
+			}
 
-//
-// The version with the closure.
-//
-window.onload = function() {
-	var count = 0; 
-	var message = "You clicked me ";
-	var div = document.getElementById("message");
 
-	var button = document.getElementById("clickme");
-	button.onclick = function() {
-		count++;
-		div.innerHTML = message + count + " times!";
-	};
-};
+			function minus () {
+				speed--;
+				update()
+			}
 
-</script> 
-</head> 
+
+			function reset () {
+				speed = 0;
+				update()
+			}
+
+			document.getElementById('plus').addEventListener('click', plus)
+			document.getElementById('0').addEventListener('click', reset)
+			document.getElementById('minus').addEventListener('click', minus)
+		}
+	</script>
+</head>
 <body>
-	<button id="clickme">Click me!</button>
-	<div id="message"></div>
+<button id="plus">+</button>
+<button id="0">0</button>
+<button id="minus">-</button>
+<div id="playback-speed"></div>
 </body>
 </html>
-

@@ -1,50 +1,78 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Coffee Constructor</title>
-<script>
+    <meta charset="utf-8">
+    <title>Coffee Constructor</title>
+    <script>
+        class Drink {
+            constructor (ounces) {
+                this.ounces = ounces
+            }
 
-function Coffee(roast, ounces) {
-	this.roast = roast;
-	this.ounces = ounces;
-	this.getSize = function() {
-		if (this.ounces === 8) {
-			return "small";
-		} else if (this.ounces === 12) {
-			return "medium";
-		} else if (this.ounces === 16) {
-			return "large";
-		}
-	};
-	this.order = function() {
-		var msg;
-		switch (this.getSize()) {
-			case "small":
-			case "medium":
-			case "large":
-				msg = "You've ordered a " + this.getSize() + " " + this.roast + " coffee.";
-				break;
-			default:
-				msg = "We don't have a " + this.roast + " in that size!";
-				break;
-		}
-		return msg;
-	};
-}
+            getSize () {
+                switch (this.ounces) {
+                    case 8: return 'small';
+                    case 12: return 'medium';
+                    case 16: return 'large';
+                    default: return null  }   }
 
-var coffee = new Coffee("House Blend", 12);
-console.log(coffee.order());
+                    sip () {
+                console.log('Hmm, tasty')  }  }
 
-var darkRoast = new Coffee("Dark Roast", 16);
-console.log(darkRoast.order());
+        class Coffee extends Drink {
+            constructor (roast, ounces) {
+                super(ounces);
+                this.roast = roast;
+                this.ounces = ounces   }
 
-var specialBlend = new Coffee("Special Blend", 200);
-console.log(specialBlend.order());
+            order () {
+                return this.getSize() !== null
+                    ? `You've ordered a ${this.getSize()} ${this.type} coffee.`
+                    : `We don't have ${this.type} in size ${this.ounces}!`   }   }
 
-</script>
+        class Tea extends Drink {
+            constructor (type, ounces) {
+                super(ounces);
+                this.type = type;
+                this.ounces = ounces  }
+
+            getSize () {
+                switch (this.ounces) {
+                    case 8: return 'small';
+                    case 12: return 'medium';
+                    case 16: return 'large';
+                    default: return null  }  }
+
+            getSteepTime () {
+                switch (this.type) {
+                    case 'white': return 2;
+                    case 'green': return 3;
+                    case 'oolong': return 3;
+                    case 'black': return 3;
+                    case 'pu-erh': return 5;
+                    case 'maté': return 5;
+                    case 'rooibos': return 5;
+                    case 'herbal': return 5;
+                    default: return null  }  }
+
+            order () {
+                return this.getSize() !== null
+                    ? `You've ordered a ${this.getSize()} ${this.type} tea.`
+                    : `We don't have ${this.type} in size ${this.ounces}!`  }  }
+
+        const coffee = new Coffee('House Blend', 12);
+        console.log(coffee.order());
+
+        const darkRoast = new Coffee('Dark Roast', 16);
+        console.log(darkRoast.order());
+
+        const specialBlend = new Coffee('Special Blend', 200);
+        console.log(specialBlend.order());
+        console.log(new Tea('white', 8).order());
+        console.log(new Tea('black', 200).order());
+        new Tea('white', 12).sip()
+    </script>
 </head>
 <body>
 </body>
 </html>
-
