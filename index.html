@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="counter">
+    <button @click="minus" >minus</button>
+    <button @click="plus" >plus</button>
+    <button @click="reset" >Reset</button>
+
+    <p> {{ message }}  </p>
+</div>
+
+<div>
+    <script>
+    let num = 0;
+    let app = new Vue({
+        el: '#counter',
+        data: {
+            message: num
+        },
+
+        methods: {
+            plus: function () {
+                num++;
+
+                console.log("add " + num);
+                this.message = num;
+            },
+
+            minus: function () {
+                num--;
+
+                console.log("minus " + num);
+                this.message = num;
+            },
+
+            reset: function () {
+                num = 0;
+
+                console.log("reset " + num);
+                this.message = num;
+            }
+        }
+    })
+
+
+    </script>
+
+</div>
+</body>
+</html>
